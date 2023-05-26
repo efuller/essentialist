@@ -1,5 +1,5 @@
 function fizzBuzzChecker(num: number) {
-    if (num === 102) {
+    if (num > 100) {
         throw new Error();
     }
 
