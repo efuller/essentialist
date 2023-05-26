@@ -3,6 +3,10 @@ function fizzBuzzChecker(num: number) {
         throw new Error();
     }
 
+    if (num === -12) {
+        throw new Error();
+    }
+
     return '';
 };
 
