@@ -1,22 +1,4 @@
-function fizzBuzzChecker(num: number) {
-    if (num > 100 || num < 1) {
-        throw new Error('Numbers between 1 and 100 only.');
-    }
-
-    if (num % 3 === 0 && num % 5 === 0) {
-        return 'FizzBuzz';
-    }
-
-    if (num % 3 === 0) {
-        return 'Fizz';
-    }
-
-    if (num % 5 === 0) {
-        return 'Buzz';
-    }
-
-    return String(num);
-};
+import { fizzBuzzChecker } from "./fizzbuzz";
 
 describe("fizzbuzz", () => {
     const errorMessage = 'Numbers between 1 and 100 only.';
@@ -38,7 +20,7 @@ describe("fizzbuzz", () => {
         101
     ])('should throw an Error when given %d', (param) => {
         expect(() => fizzBuzzChecker(param)).toThrowError(errorMessage);
-    })
+    });
 
     it.each([
         [3, 'Fizz'],
