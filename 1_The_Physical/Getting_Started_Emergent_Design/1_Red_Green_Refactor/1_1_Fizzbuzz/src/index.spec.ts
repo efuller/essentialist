@@ -19,7 +19,7 @@ function fizzBuzzChecker(num: number) {
         return 'Buzz';
     }
 
-    return '';
+    return String(num);
 };
 
 describe("fizzbuzz", () => {
