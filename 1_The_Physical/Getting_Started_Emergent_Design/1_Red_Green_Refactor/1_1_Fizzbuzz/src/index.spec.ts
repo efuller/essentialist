@@ -1,4 +1,6 @@
-function fizzBuzzChecker() {};
+function fizzBuzzChecker() {
+    return '';
+};
 
 describe("fizzbuzz", () => {
     it('should know that fizzBuzzChecker exists', () => {
