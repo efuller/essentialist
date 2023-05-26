@@ -3,7 +3,7 @@ function fizzBuzzChecker(num: number) {
         throw new Error();
     }
 
-    if (num === -12) {
+    if (num < 1) {
         throw new Error();
     }
 
