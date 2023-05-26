@@ -19,6 +19,8 @@ function fizzBuzzChecker(num: number) {
 };
 
 describe("fizzbuzz", () => {
+    const errorMessage = 'Numbers between 1 and 100 only.';
+
     it('should know that fizzBuzzChecker exists', () => {
         expect(fizzBuzzChecker).toBeDefined();
     });
@@ -30,19 +32,19 @@ describe("fizzbuzz", () => {
     });
 
     it('should throw an error when given 102', () => {
-        expect(() => fizzBuzzChecker(102)).toThrowError();
+        expect(() => fizzBuzzChecker(102)).toThrowError(errorMessage);
     });
 
     it('should throw and error when -12 is passed in as an argument', () => {
-        expect(() => fizzBuzzChecker(-12)).toThrowError();
+        expect(() => fizzBuzzChecker(-12)).toThrowError(errorMessage);
     });
 
     it('should throw an error when given 0', () => {
-        expect(() => fizzBuzzChecker(0)).toThrowError();
+        expect(() => fizzBuzzChecker(0)).toThrowError(errorMessage);
     });
 
     it('should throw an error when given 101', () => {
-        expect(() => fizzBuzzChecker(101)).toThrowError();
+        expect(() => fizzBuzzChecker(101)).toThrowError(errorMessage);
     });
 
     it('should return Fizz when given 3', () => {
