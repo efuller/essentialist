@@ -47,13 +47,13 @@ describe("fizzbuzz", () => {
         expect(() => fizzBuzzChecker(101)).toThrowError(errorMessage);
     });
 
-    it('should return Fizz when given 3', () => {
-        expect(fizzBuzzChecker(3)).toBe('Fizz');
-    });
-
-    it('should return Fizz when given 9', () => {
-        expect(fizzBuzzChecker(9)).toBe('Fizz');
-    });
+    it.each([
+        3,
+        9,
+        36,
+    ])('should return "Fizz" when given %d', (param) => {
+        expect(fizzBuzzChecker(param)).toBe('Fizz');
+    })
 
     it.each([
         5,
