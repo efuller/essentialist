@@ -31,21 +31,14 @@ describe("fizzbuzz", () => {
         expect(typeof result).toBe('string');
     });
 
-    it('should throw an error when given 102', () => {
-        expect(() => fizzBuzzChecker(102)).toThrowError(errorMessage);
-    });
-
-    it('should throw and error when -12 is passed in as an argument', () => {
-        expect(() => fizzBuzzChecker(-12)).toThrowError(errorMessage);
-    });
-
-    it('should throw an error when given 0', () => {
-        expect(() => fizzBuzzChecker(0)).toThrowError(errorMessage);
-    });
-
-    it('should throw an error when given 101', () => {
-        expect(() => fizzBuzzChecker(101)).toThrowError(errorMessage);
-    });
+    it.each([
+        102,
+        -12,
+        0,
+        101
+    ])('should throw an Error when given %d', (param) => {
+        expect(() => fizzBuzzChecker(param)).toThrowError(errorMessage);
+    })
 
     it.each([
         [3, 'Fizz'],
