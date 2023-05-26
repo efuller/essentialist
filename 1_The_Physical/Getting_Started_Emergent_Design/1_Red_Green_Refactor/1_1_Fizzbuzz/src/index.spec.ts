@@ -1,4 +1,8 @@
-function fizzBuzzChecker() {
+function fizzBuzzChecker(num: number) {
+    if (num === 102) {
+        throw new Error();
+    }
+
     return '';
 };
 
@@ -8,7 +12,7 @@ describe("fizzbuzz", () => {
     });
 
     it('should return a string', () => {
-        const result = fizzBuzzChecker();
+        const result = fizzBuzzChecker(25);
 
         expect(typeof result).toBe('string');
     });
