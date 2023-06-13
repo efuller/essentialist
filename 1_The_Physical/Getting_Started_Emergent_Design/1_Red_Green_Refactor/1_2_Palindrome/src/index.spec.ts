@@ -42,5 +42,9 @@ describe('palindrome checker', () => {
 
   it('should know that Momx is not a palindrome', () => {
     expect(palindromeChecker('Momx')).toBeFalsy();
+  });
+
+  it('should know that xMomx is a palindrome', () => {
+    expect(palindromeChecker('xMomx')).toBeTruthy();
   })
 })
