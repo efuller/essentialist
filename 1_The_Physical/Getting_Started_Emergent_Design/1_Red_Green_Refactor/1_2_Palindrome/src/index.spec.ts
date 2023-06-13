@@ -1,5 +1,5 @@
 function palindromeChecker(word: string): boolean {
-  if (word.split('').reverse().join('') !== word) {
+  if (word.split('').reverse().join('').toLowerCase() !== word.toLowerCase()) {
     return false;
   }
   return true;
