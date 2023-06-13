@@ -1,4 +1,6 @@
-function palindromeChecker() {}
+function palindromeChecker(word: string): boolean {
+  return true;
+}
 
 describe('palindrome checker', () => {
   it('should know that palindromeChecker exists', () => {
