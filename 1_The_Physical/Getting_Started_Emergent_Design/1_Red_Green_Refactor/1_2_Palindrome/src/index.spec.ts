@@ -48,7 +48,7 @@ describe('palindrome checker', () => {
     expect(palindromeChecker('xMomx')).toBeTruthy();
   });
 
-  it('should know that Never Odd or Even returns true', () => {
+  it('should know that Never Odd or Even is a palindrome', () => {
     expect(palindromeChecker('Never Odd or Even')).toBeTruthy();
   });
 
