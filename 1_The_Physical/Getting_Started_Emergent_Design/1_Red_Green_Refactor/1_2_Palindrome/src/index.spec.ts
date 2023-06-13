@@ -1,11 +1,4 @@
-function palindromeChecker(word: string): boolean {
-  const wordWithNoSpacesAndLowerCase = word.replace(/\s+/g, '').toLowerCase();
-
-  return wordWithNoSpacesAndLowerCase
-    .split('')
-    .reverse()
-    .join('') === wordWithNoSpacesAndLowerCase
-}
+import { palindromeChecker } from "./index";
 
 describe('palindrome checker', () => {
   it('should know that palindromeChecker exists', () => {
