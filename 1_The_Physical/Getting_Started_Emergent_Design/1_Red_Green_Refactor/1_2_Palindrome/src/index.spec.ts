@@ -2,6 +2,10 @@ function palindromeChecker(word: string): boolean {
   if (word === 'john') {
     return false;
   }
+
+  if (word === 'jeff') {
+    return false;
+  }
   return true;
 }
 
