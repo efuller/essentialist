@@ -54,5 +54,9 @@ describe('palindrome checker', () => {
 
   it('should know that Never Odd or Even1 is not a palindrome', () => {
     expect(palindromeChecker('Never Odd or Even1')).toBeFalsy();
-  })
+  });
+
+  it('should know that 1Never Odd or Even1 is a palindrome', () => {
+    expect(palindromeChecker('1Never Odd or Even1')).toBeTruthy();
+  });
 })
