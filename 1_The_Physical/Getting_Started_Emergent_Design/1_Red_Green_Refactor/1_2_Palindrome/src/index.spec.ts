@@ -1,7 +1,7 @@
 function palindromeChecker(word: string): boolean {
-  const wordWithNoSpaces = word.replace(/\s+/g, '');
+  const wordWithNoSpacesAndLowerCase = word.replace(/\s+/g, '').toLowerCase();
 
-  if (wordWithNoSpaces.split('').reverse().join('').toLowerCase() !== wordWithNoSpaces.toLowerCase()) {
+  if (wordWithNoSpacesAndLowerCase.split('').reverse().join('') !== wordWithNoSpacesAndLowerCase) {
     return false;
   }
   return true;
