@@ -19,6 +19,15 @@ describe('password validator', () => {
       errors: [ { type: 'ExceedsCharacterLimit', message: 'Password cannot exceed 15 characters.' }]
     });
   });
+
+  it('should know that `maxwellTheBe` is not valid because it does not contain a digit', () => {
+    const result = passwordValidator('maxwellTheBe');
+
+    expect(result).toMatchObject({
+      isValid: false,
+      errors: [ { type: 'NoDigit', message: 'Password should contain at least one digit.' }]
+    });
+  });
 })
 
 
