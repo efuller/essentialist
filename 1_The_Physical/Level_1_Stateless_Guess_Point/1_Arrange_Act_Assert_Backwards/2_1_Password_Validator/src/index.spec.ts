@@ -28,6 +28,15 @@ describe('password validator', () => {
       errors: [ { type: 'NoDigit', message: 'Password should contain at least one digit.' }]
     });
   });
+
+  it('should know that `Maxwell1_c1` is valid', () => {
+    const result = passwordValidator('Maxwell1_c1');
+
+    expect(result).toMatchObject({
+      isValid: true,
+      errors: []
+    });
+  });
 })
 
 

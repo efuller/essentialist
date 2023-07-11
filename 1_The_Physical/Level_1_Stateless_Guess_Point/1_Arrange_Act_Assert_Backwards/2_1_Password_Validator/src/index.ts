@@ -6,6 +6,13 @@ export function passwordValidator(password: string) {
     };
   }
 
+  if (password.length > 15 ) {
+    return {
+      isValid: false,
+      errors: [ { type: 'ExceedsCharacterLimit', message: 'Password cannot exceed 15 characters.' }]
+    };
+  }
+
   if(!/\d/g.test(password)) {
     return {
       isValid: false,
@@ -14,7 +21,7 @@ export function passwordValidator(password: string) {
   }
 
   return {
-    isValid: false,
-    errors: [ { type: 'ExceedsCharacterLimit', message: 'Password cannot exceed 15 characters.' }]
+    isValid: true,
+    errors: []
   };
 }
