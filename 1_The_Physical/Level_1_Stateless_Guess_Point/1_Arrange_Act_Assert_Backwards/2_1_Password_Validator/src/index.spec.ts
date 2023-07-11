@@ -1,8 +1,14 @@
+import { passwordValidator } from "./index";
 
 describe('password validator', () => {
 
-  test('hello', () => {
-    expect("between 5 and 15").toContain('5 and 15')
+  it('should know that `test` does not contain at least 5 characters', () => {
+    const result = passwordValidator('test');
+
+    expect(result).toMatchObject({
+      isValid: false,
+      errors: [ { type: 'NoMinimumCharacters', message: 'Password must contain at least 5 characters.' }]
+    })
   })
 })
 
