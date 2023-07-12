@@ -21,11 +21,12 @@ Write a function (or a class) for validating passwords. Passwords must meet the 
 - Password that does not contain at least one upper case letter is not valid
 
 ## Examples
-- `maxwell1_c` returns a falsey response because of a lack of uppercase characters
-- `maxwellTheBe` returns a falsey response because of a lack of digits
-- `thePhysical1234567` returns a falsey response because of exceeding the 15 character length
-- `test` - returns falsy because of not meeting the required number of characters
-- `Maxwell1_c1` returns truthy as all requirements are met
+- [x] `maxwell1_c` returns a falsey response because of a lack of uppercase characters
+- [x] `maxwellTheBe` returns a falsey response because of a lack of digits
+- [x] `thePhysical1234567` returns a falsey response because of exceeding the 15 character length
+- [x] `test` - returns falsy because of not meeting the required number of characters
+- [x] `Maxwell1_c1` returns truthy as all requirements are met
+- [x] `Johnny1m` returns truthy as all requirements are met
 
 ## Initial API Design
 ```typescript
