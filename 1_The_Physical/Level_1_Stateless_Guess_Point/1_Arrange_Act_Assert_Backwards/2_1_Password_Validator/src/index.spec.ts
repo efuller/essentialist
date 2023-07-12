@@ -10,6 +10,7 @@ describe('password validator', () => {
       errors: [
         { type: 'NoMinimumCharacters', message: 'Password must contain at least 5 characters.' },
         { type: 'NoDigit', message: 'Password should contain at least one digit.' },
+        { type: 'NoUpperCase', message: 'Password should contain at least one upper case character.' }
       ]
     });
   });
@@ -40,6 +41,13 @@ describe('password validator', () => {
       errors: []
     });
   });
+
+  it('should know that `maxwell1_c` is not valid because it contains no uppercase letters', () => {
+    const result = passwordValidator('maxwell1_c');
+
+    expect(result).toMatchObject({
+      isValid: false,
+      errors: [ { type: 'NoUpperCase', message: 'Password should contain at least one upper case character.' }]
+    });
+  });
 })
-
-

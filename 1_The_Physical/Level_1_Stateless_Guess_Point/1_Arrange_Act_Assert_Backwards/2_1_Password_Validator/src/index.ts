@@ -19,6 +19,12 @@ export function passwordValidator(password: string) {
     });
   }
 
+  if(!/[A-Z]/g.test(password)) {
+    errors.push({
+      type: 'NoUpperCase', message: 'Password should contain at least one upper case character.'
+    });
+  }
+
   if (errors.length > 0) {
     return {
       isValid: false,
