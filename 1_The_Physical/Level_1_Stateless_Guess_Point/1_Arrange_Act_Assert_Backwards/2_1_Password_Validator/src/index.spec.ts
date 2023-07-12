@@ -7,7 +7,10 @@ describe('password validator', () => {
 
     expect(result).toMatchObject({
       isValid: false,
-      errors: [ { type: 'NoMinimumCharacters', message: 'Password must contain at least 5 characters.' }]
+      errors: [
+        { type: 'NoMinimumCharacters', message: 'Password must contain at least 5 characters.' },
+        { type: 'NoDigit', message: 'Password should contain at least one digit.' },
+      ]
     });
   });
 
