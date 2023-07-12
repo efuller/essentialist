@@ -1,4 +1,4 @@
-import { passwordValidator, ResultObject } from "./index";
+import { passwordValidator } from "./index";
 
 describe('password validator', () => {
   it.each([
@@ -46,12 +46,24 @@ describe('password validator', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should know that `Maxwell1_c1` is valid', () => {
-    const result = passwordValidator('Maxwell1_c1');
+  it.each([
+    [
+      'Maxwell1_c1l',
+      {
+        isValid: true,
+        errors: []
+      }
+    ],
+    [
+      'Johnny1m',
+      {
+        isValid: true,
+        errors: []
+      }
+    ]
+  ])('should know that %s is a valid password', (password, expected) => {
+    const result = passwordValidator(password);
 
-    expect(result).toEqual<ResultObject>({
-      isValid: true,
-      errors: []
-    });
+    expect(result).toEqual(expected);
   });
 });
