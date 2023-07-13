@@ -5,7 +5,7 @@ describe('password validator', () => {
     [
       'test',
       {
-        isValid: false,
+        valid: false,
         errors: [
           { type: 'NoMinimumCharacters', message: 'Password must contain at least 5 characters.' },
           { type: 'NoDigit', message: 'Password should contain at least one digit.' },
@@ -16,7 +16,7 @@ describe('password validator', () => {
     [
       'thePhysical1234567',
       {
-        isValid: false,
+        valid: false,
         errors: [
           { type: 'ExceedsCharacterLimit', message: 'Password cannot exceed 15 characters.' },
         ]
@@ -25,7 +25,7 @@ describe('password validator', () => {
     [
       'maxwellTheBe',
       {
-        isValid: false,
+        valid: false,
         errors: [
           { type: 'NoDigit', message: 'Password should contain at least one digit.' },
         ]
@@ -34,7 +34,7 @@ describe('password validator', () => {
     [
       'maxwell1_c',
       {
-        isValid: false,
+        valid: false,
         errors: [
           { type: 'NoUpperCase', message: 'Password should contain at least one upper case character.' },
         ]
@@ -50,14 +50,14 @@ describe('password validator', () => {
     [
       'Maxwell1_c1l',
       {
-        isValid: true,
+        valid: true,
         errors: []
       }
     ],
     [
       'Johnny1m',
       {
-        isValid: true,
+        valid: true,
         errors: []
       }
     ]

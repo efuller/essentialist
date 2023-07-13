@@ -1,5 +1,5 @@
 export type ResultObject = {
-  isValid: boolean;
+  valid: boolean;
   errors: PasswordValidatorErrors[];
 }
 
@@ -37,13 +37,13 @@ export function passwordValidator(password: string): ResultObject {
 
   if (errors.length > 0) {
     return {
-      isValid: false,
+      valid: false,
       errors,
     }
   }
 
   return {
-    isValid: true,
+    valid: true,
     errors: []
   };
 }
