@@ -41,3 +41,25 @@ resultObject = {
   ]
 }
 ```
+---
+
+## Revisiting API Design
+While the current implementation is in a working state I've come to a few conclusions
+- As a developer, I am not happy the API provided by the `resultObject`. I would not enjoy using it. For example, it would be great to have some helper functions for getting/setting, and checking for errors.
+- The tests I have written are too _noisy_ and also brittle -- meaning could break easily, and too specific
+
+## Potential New API Design
+```typescript
+const resultObject = passwordValidator('test');
+
+resultObject.hasErrors() // true/false
+resultObject.getErrors() // returns array of errors
+resultObject.isValid() // true/false
+resultObject.setError(error) // pushed new error on to errors array
+resultObject.hasErrorType(type) // check to see if there is an error of a specific type
+```
+This API might change as I work through the changes, but if I'm thinking about who this will be used by (developer), then
+I think this API would be a bit more pleasant to work with and write tests for or with.
+
+My approach will be to use a straight object literal, but this is a step towards eventually building
+out my own `Result` class.
