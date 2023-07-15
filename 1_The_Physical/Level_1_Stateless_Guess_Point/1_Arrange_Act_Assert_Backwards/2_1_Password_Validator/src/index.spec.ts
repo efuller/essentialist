@@ -17,16 +17,21 @@ describe('password validator', () => {
     expect(result).toEqual(expected);
   });
 
-  it.each([
-    [
-      'thePhysical1234567',
+  it('should now that `thePhysical1234567` exceeds the 15 character limit', () => {
+    const expected =
       {
         valid: false,
         errors: [
           { type: 'ExceedsCharacterLimit', message: 'Password cannot exceed 15 characters.' },
         ]
       }
-    ],
+
+    const result = passwordValidator('thePhysical1234567');
+
+    expect(result).toEqual(expected);
+  });
+
+  it.each([
     [
       'maxwellTheBe',
       {
