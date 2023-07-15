@@ -40,7 +40,7 @@ describe('password validator', () => {
         ]
       }
     ]
-  ])('should know that %s is not a valid password with a result object of: %o', (password, expected ) => {
+  ])('should know that %s is not a valid password', (password, expected ) => {
     const result = passwordValidator(password);
 
     expect(result).toEqual(expected);
