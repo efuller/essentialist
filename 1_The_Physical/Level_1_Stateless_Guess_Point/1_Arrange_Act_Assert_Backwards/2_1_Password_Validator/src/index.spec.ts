@@ -1,9 +1,8 @@
 import { passwordValidator } from "./index";
 
 describe('password validator', () => {
-  it.each([
-    [
-      'test',
+  it('should now that `test` does not contain 5 characters, has no digit, and no uppercase character', () => {
+    const expected =
       {
         valid: false,
         errors: [
@@ -11,8 +10,14 @@ describe('password validator', () => {
           { type: 'NoDigit', message: 'Password should contain at least one digit.' },
           { type: 'NoUpperCase', message: 'Password should contain at least one upper case character.' }
         ]
-      }
-    ],
+      };
+
+    const result = passwordValidator('test');
+
+    expect(result).toEqual(expected);
+  });
+
+  it.each([
     [
       'thePhysical1234567',
       {
