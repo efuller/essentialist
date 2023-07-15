@@ -45,18 +45,16 @@ describe('password validator', () => {
     expect(result).toEqual(expected);
   });
 
-  it.each([
-    [
-      'maxwell1_c',
+  it('should know that `maxwell1_c` does not contain an uppercase character', () => {
+    const expected =
       {
         valid: false,
         errors: [
           { type: 'NoUpperCase', message: 'Password should contain at least one upper case character.' },
         ]
       }
-    ]
-  ])('should know that %s is not a valid password', (password, expected ) => {
-    const result = passwordValidator(password);
+
+    const result = passwordValidator('maxwell1_c');
 
     expect(result).toEqual(expected);
   });
