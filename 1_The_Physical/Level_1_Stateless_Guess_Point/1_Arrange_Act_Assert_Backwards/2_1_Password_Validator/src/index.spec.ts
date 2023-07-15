@@ -1,7 +1,7 @@
 import { passwordValidator } from "./index";
 
 describe('password validator', () => {
-  it('should now that `test` does not contain 5 characters, has no digit, and no uppercase character', () => {
+  it('should know that `test` does not contain 5 characters, has no digit, and no uppercase character', () => {
     const expected =
       {
         valid: false,
@@ -17,7 +17,7 @@ describe('password validator', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should now that `thePhysical1234567` exceeds the 15 character limit', () => {
+  it('should know that `thePhysical1234567` exceeds the 15 character limit', () => {
     const expected =
       {
         valid: false,
@@ -31,16 +31,21 @@ describe('password validator', () => {
     expect(result).toEqual(expected);
   });
 
-  it.each([
-    [
-      'maxwellTheBe',
+  it('should know that `maxwellTheBe` does not contain a digit', () => {
+    const expected =
       {
         valid: false,
         errors: [
           { type: 'NoDigit', message: 'Password should contain at least one digit.' },
         ]
       }
-    ],
+
+    const result = passwordValidator('maxwellTheBe');
+
+    expect(result).toEqual(expected);
+  });
+
+  it.each([
     [
       'maxwell1_c',
       {
