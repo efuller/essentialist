@@ -1,6 +1,9 @@
+import { PasswordValidator } from "jest-cucumber/dist/examples/typescript/src/password-validator";
+
 export type ResultObject = {
-  valid: boolean;
   errors: PasswordValidatorErrors[];
+  setError: (error: PasswordValidatorErrors) => void
+  valid: boolean;
 }
 
 type PasswordErrorTypes = 'NoMinimumCharacters'
@@ -12,30 +15,33 @@ type PasswordValidatorErrors = { type: PasswordErrorTypes, message: string }
 
 export function passwordValidator(password: string): ResultObject {
   const response: ResultObject = {
-    valid: false,
     errors: [],
+    setError(error: PasswordValidatorErrors) {
+      this.errors.push(error);
+    },
+    valid: false,
   }
 
   if (password.length < 5 ) {
-    response.errors.push({
+    response.setError({
       type: 'NoMinimumCharacters', message: 'Password must contain at least 5 characters.'
     });
   }
 
   if (password.length > 15 ) {
-    response.errors.push({
+    response.setError({
       type: 'ExceedsCharacterLimit', message: 'Password cannot exceed 15 characters.'
     });
   }
 
   if(!/\d/g.test(password)) {
-    response.errors.push({
+    response.setError({
       type: 'NoDigit', message: 'Password should contain at least one digit.'
     });
   }
 
   if(!/[A-Z]/g.test(password)) {
-    response.errors.push({
+    response.setError({
       type: 'NoUpperCase', message: 'Password should contain at least one upper case character.'
     });
   }

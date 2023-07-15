@@ -14,7 +14,7 @@ describe('password validator', () => {
 
     const result = passwordValidator('test');
 
-    expect(result).toEqual(expected);
+    expect(result).toMatchObject(expected);
   });
 
   it('should know that `thePhysical1234567` exceeds the 15 character limit', () => {
@@ -28,7 +28,7 @@ describe('password validator', () => {
 
     const result = passwordValidator('thePhysical1234567');
 
-    expect(result).toEqual(expected);
+    expect(result).toMatchObject(expected);
   });
 
   it('should know that `maxwellTheBe` does not contain a digit', () => {
@@ -42,7 +42,7 @@ describe('password validator', () => {
 
     const result = passwordValidator('maxwellTheBe');
 
-    expect(result).toEqual(expected);
+    expect(result).toMatchObject(expected);
   });
 
   it('should know that `maxwell1_c` does not contain an uppercase character', () => {
@@ -56,7 +56,7 @@ describe('password validator', () => {
 
     const result = passwordValidator('maxwell1_c');
 
-    expect(result).toEqual(expected);
+    expect(result).toMatchObject(expected);
   });
 
   it('should know that `Maxwell1_c1l` is a valid password', () => {
@@ -68,7 +68,7 @@ describe('password validator', () => {
 
     const result = passwordValidator('Maxwell1_c1l');
 
-    expect(result).toEqual(expected);
+    expect(result).toMatchObject(expected);
   });
 
   it('should know that `Johnny1m` is a valid password', () => {
@@ -80,6 +80,6 @@ describe('password validator', () => {
 
     const result = passwordValidator('Johnny1m');
 
-    expect(result).toEqual(expected);
+    expect(result).toMatchObject(expected);
   });
 });
