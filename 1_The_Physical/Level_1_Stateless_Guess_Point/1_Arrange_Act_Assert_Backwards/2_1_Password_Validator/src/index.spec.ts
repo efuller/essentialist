@@ -71,16 +71,14 @@ describe('password validator', () => {
     expect(result).toEqual(expected);
   });
 
-  it.each([
-    [
-      'Johnny1m',
+  it('should know that `Johnny1m` is a valid password', () => {
+    const expected =
       {
         valid: true,
         errors: []
       }
-    ]
-  ])('should know that %s is a valid password', (password, expected) => {
-    const result = passwordValidator(password);
+
+    const result = passwordValidator('Johnny1m');
 
     expect(result).toEqual(expected);
   });
