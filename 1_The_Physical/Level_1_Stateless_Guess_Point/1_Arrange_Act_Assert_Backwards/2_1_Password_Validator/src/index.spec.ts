@@ -1,4 +1,4 @@
-import { PasswordErrorTypes, passwordValidator } from "./index";
+import { passwordValidator } from "./index";
 
 describe('password validator', () => {
   it('should know that `test` does not contain 5 characters, has no digit, and no uppercase character', () => {
@@ -13,24 +13,21 @@ describe('password validator', () => {
     const result = passwordValidator('thePhysical1234567');
 
     expect(result.isValid).toBeFalsy();
-    ['ExceedsCharacterLimit']
-      .forEach((errorType) => expect(result.hasError(errorType)).toBeTruthy());
+    expect(result.hasError('ExceedsCharacterLimit')).toBeTruthy();
   });
 
   it('should know that `maxwellTheBe` does not contain a digit', () => {
     const result = passwordValidator('maxwellTheBe');
 
     expect(result.isValid).toBeFalsy();
-    ['NoDigit']
-      .forEach((errorType) => expect(result.hasError(errorType)).toBeTruthy());
+    expect(result.hasError('NoDigit')).toBeTruthy();
   });
 
   it('should know that `maxwell1_c` does not contain an uppercase character', () => {
     const result = passwordValidator('maxwell1_c');
 
     expect(result.isValid).toBeFalsy();
-    ['NoUpperCase']
-      .forEach((errorType) => expect(result.hasError(errorType)).toBeTruthy());
+    expect(result.hasError('NoUpperCase')).toBeTruthy();
   });
 
   it('should know that `Maxwell1_c1l` is a valid password', () => {

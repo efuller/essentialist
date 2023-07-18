@@ -1,5 +1,3 @@
-import { PasswordValidator } from "jest-cucumber/dist/examples/typescript/src/password-validator";
-
 export type ResultObject = {
   errors: PasswordValidatorErrors[];
   hasError: (errorType: string) => boolean;
