@@ -14,6 +14,7 @@ describe('password validator', () => {
 
     const result = passwordValidator('test');
 
+    expect(result.valid).toBeFalsy();
     expect(result).toMatchObject(expected);
   });
 
@@ -28,6 +29,7 @@ describe('password validator', () => {
 
     const result = passwordValidator('thePhysical1234567');
 
+    expect(result.valid).toBeFalsy();
     expect(result).toMatchObject(expected);
   });
 
@@ -42,6 +44,7 @@ describe('password validator', () => {
 
     const result = passwordValidator('maxwellTheBe');
 
+    expect(result.valid).toBeFalsy();
     expect(result).toMatchObject(expected);
   });
 
@@ -56,6 +59,7 @@ describe('password validator', () => {
 
     const result = passwordValidator('maxwell1_c');
 
+    expect(result.valid).toBeFalsy();
     expect(result).toMatchObject(expected);
   });
 
@@ -68,6 +72,7 @@ describe('password validator', () => {
 
     const result = passwordValidator('Maxwell1_c1l');
 
+    expect(result.valid).toBeTruthy();
     expect(result).toMatchObject(expected);
   });
 
@@ -80,6 +85,7 @@ describe('password validator', () => {
 
     const result = passwordValidator('Johnny1m');
 
+    expect(result.valid).toBeTruthy();
     expect(result).toMatchObject(expected);
   });
 });
