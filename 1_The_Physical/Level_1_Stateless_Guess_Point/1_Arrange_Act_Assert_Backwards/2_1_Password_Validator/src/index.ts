@@ -2,11 +2,12 @@ import { PasswordValidator } from "jest-cucumber/dist/examples/typescript/src/pa
 
 export type ResultObject = {
   errors: PasswordValidatorErrors[];
-  setError: (error: PasswordValidatorErrors) => void
+  hasError: (errorType: string) => boolean;
+  setError: (error: PasswordValidatorErrors) => void;
   isValid: boolean;
 }
 
-type PasswordErrorTypes = 'NoMinimumCharacters'
+export type PasswordErrorTypes = 'NoMinimumCharacters'
 | 'NoDigit'
 | 'NoUpperCase'
 | 'ExceedsCharacterLimit'
@@ -16,6 +17,9 @@ type PasswordValidatorErrors = { type: PasswordErrorTypes, message: string }
 export function passwordValidator(password: string): ResultObject {
   const response: ResultObject = {
     errors: [],
+    hasError(errorType: string) {
+      return this.errors.some((error) => error.type === errorType);
+    },
     setError(error: PasswordValidatorErrors) {
       this.errors.push(error);
     },
