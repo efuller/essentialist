@@ -3,7 +3,7 @@ import { PasswordValidator } from "jest-cucumber/dist/examples/typescript/src/pa
 export type ResultObject = {
   errors: PasswordValidatorErrors[];
   setError: (error: PasswordValidatorErrors) => void
-  valid: boolean;
+  isValid: boolean;
 }
 
 type PasswordErrorTypes = 'NoMinimumCharacters'
@@ -19,7 +19,7 @@ export function passwordValidator(password: string): ResultObject {
     setError(error: PasswordValidatorErrors) {
       this.errors.push(error);
     },
-    valid: false,
+    isValid: false,
   }
 
   if (password.length < 5 ) {
@@ -52,6 +52,6 @@ export function passwordValidator(password: string): ResultObject {
 
   return {
     ...response,
-    valid: true,
+    isValid: true,
   };
 }
