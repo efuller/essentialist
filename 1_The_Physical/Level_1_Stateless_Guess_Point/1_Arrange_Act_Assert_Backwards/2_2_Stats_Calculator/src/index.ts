@@ -1,4 +1,12 @@
 export function statsCalculator(input: number[]) {
+  const findAverage = () => {
+    const average = input.reduce((acc, curr) => {
+      return acc + curr;
+    }, 0) / input.length;
+
+    return Number(average.toFixed(12));
+  }
+
   const findMax = () => {
     let max = input[0];
     for(let i = 0; i < input.length; i++) {
@@ -23,6 +31,7 @@ export function statsCalculator(input: number[]) {
   }
 
   return {
+    average: findAverage(),
     count: getCount(),
     max: findMax(),
     min: findMin()
