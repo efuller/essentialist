@@ -1,3 +1,7 @@
 export function statsCalculator(input: number[]) {
-  return { count: 6 };
+  const getCount = () => {
+    return input.length;
+  }
+
+  return { count: getCount() };
 }
