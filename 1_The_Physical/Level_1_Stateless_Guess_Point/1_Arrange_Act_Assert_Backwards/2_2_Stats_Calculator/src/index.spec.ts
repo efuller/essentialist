@@ -12,4 +12,10 @@ describe('stats calculator', () => {
     const results = statsCalculator(input);
     expect(results.count).toBe(4);
   });
+
+  it('knows that -8 is the minimum value when given [2,4,21,-8,53,50]', () => {
+    const input = [2,4,21,-8,53,40]
+    const results = statsCalculator(input);
+    expect(results.min).toBe(-8);
+  });
 });
