@@ -15,12 +15,18 @@ completed without using system Math library functions.
 - knows the average value
 - do not use any Math library functions
 
-### Example
+### Examples
 Given this array `[2,4,21,-8,53,40]` calculate the following stats:
 - minimum value = -8
 - maximum value = 53
 - number of elements in the sequence = 6
 - average value = 18.666666666667
+
+Given this array `[4,-3,-7,25]` calculate the following stats:
+- minimum value = -7
+- maximum value = 25
+- number of elements in the sequence = 4
+- average value = 4.75
 
 ## Initial API Design
 Input will just be an array of numbers and using a results object seems to make the most sense as a return type.
