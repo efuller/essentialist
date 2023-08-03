@@ -1,4 +1,4 @@
-type StatsResult = {
+export type StatsResult = {
  average: number,
  count: number,
  max: number,
