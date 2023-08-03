@@ -1,4 +1,11 @@
-export function statsCalculator(input: number[]) {
+type StatsResult = {
+ average: number,
+ count: number,
+ max: number,
+ min: number,
+}
+
+export function statsCalculator(input: number[]): StatsResult {
   const findAverage = () => {
     const average = input.reduce((acc, curr) => {
       return acc + curr;
