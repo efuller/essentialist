@@ -10,8 +10,8 @@ describe('stats calculator', () => {
     {given: [4,-3,-7,25], stat: 'count', expected: 4},
     {given: [4,-3,-7,25], stat: 'max', expected: 25},
     {given: [4,-3,-7,25], stat: 'min', expected: -7},
-  ])('given an array of $given, the $stat value is $expected', ($variable) => {
-    const results = statsCalculator($variable.given);
-    expect(results[$variable.stat as keyof StatsResult]).toBe($variable.expected);
+  ])('given an array of $given, the $stat value is $expected', (param) => {
+    const results = statsCalculator(param.given);
+    expect(results[param.stat as keyof StatsResult]).toBe(param.expected);
   });
 });
