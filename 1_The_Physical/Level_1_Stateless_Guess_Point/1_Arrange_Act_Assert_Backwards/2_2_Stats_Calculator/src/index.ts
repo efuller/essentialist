@@ -16,7 +16,7 @@ export function statsCalculator(input: number[]): StatsResult {
 
   const findMax = () => {
     let max = input[0];
-    for(let i = 0; i < input.length; i++) {
+    for (let i = 0; i < input.length; i++) {
       if (input[i] > max) {
         max = input[i];
       }
@@ -25,7 +25,7 @@ export function statsCalculator(input: number[]): StatsResult {
   }
   const findMin = () => {
     let min = input[0];
-    for(let i = 0; i < input.length; i++) {
+    for (let i = 0; i < input.length; i++) {
       if (input[i] < min) {
         min = input[i];
       }
