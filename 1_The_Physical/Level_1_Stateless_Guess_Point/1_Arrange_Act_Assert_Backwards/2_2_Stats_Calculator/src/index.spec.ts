@@ -11,9 +11,13 @@ describe('stats calculator', () => {
     expect(results.min).toBe(-8);
   });
 
-  it('knows that given an array of 4 numbers that the count should be 4', () => {
+  it('given an array of [4,-3,-7,25], it can calculate the average, max, min, and element count', () => {
     const input = [4,-3,-7,25];
     const results = statsCalculator(input);
+
+    expect(results.average).toBe(4.75)
     expect(results.count).toBe(4);
+    expect(results.max).toBe(25);
+    expect(results.min).toBe(-7);
   });
 });
