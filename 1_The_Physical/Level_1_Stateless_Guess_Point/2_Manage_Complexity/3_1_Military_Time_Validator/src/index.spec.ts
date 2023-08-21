@@ -22,7 +22,7 @@ describe('military time validator', () => {
     });
   });
 
-  describe('validate start time', () => {
+  describe('validate hours and minutes', () => {
     it.each([
       { given: "25:00-12:23", expected: false },
       { given: "14:60-12:23", expected: false },
