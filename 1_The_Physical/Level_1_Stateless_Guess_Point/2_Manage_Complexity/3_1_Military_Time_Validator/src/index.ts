@@ -67,6 +67,13 @@ export const validateMilitaryTime = (time: string): Result => {
     }
   }
 
+  if (!validateMinutes(Number(endMinutes))) {
+    return {
+      errors: ['Invalid time range format'],
+      isValid: false
+    }
+  }
+
   return {
     errors: [],
     isValid: true,
