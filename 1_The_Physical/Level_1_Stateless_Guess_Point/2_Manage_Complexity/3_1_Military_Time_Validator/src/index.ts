@@ -6,9 +6,9 @@ export type Result = {
 }
 
 export const validateMilitaryTime = (time: string): Result => {
-  const [startTime, endtime] = time.split('-');
+  const [startTime, endTime] = time.split('-');
 
-  if (!startTime || !endtime) {
+  if (!startTime || !endTime) {
     return {
       errors: ['Invalid time range format'],
       isValid: false
