@@ -14,6 +14,7 @@ describe('military time validator', () => {
     it.each([
       { given: "01:12--14:32", expected: false },
       { given: "01-12-14:32", expected: false },
+      { given: "01:12-14-32", expected: false },
     ])('it knows that $given is not a valid input', (param) => {
       const result = validateMilitaryTime(param.given);
       expect(result.isValid).toBe(param.expected);

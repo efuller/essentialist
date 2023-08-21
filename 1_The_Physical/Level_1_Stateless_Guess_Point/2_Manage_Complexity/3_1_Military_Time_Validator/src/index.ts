@@ -15,9 +15,17 @@ export const validateMilitaryTime = (time: string): Result => {
     }
   }
 
-  const [hours, minutes] = startTime.split(':');
+  const [startHours, startMinutes] = startTime.split(':');
+  const [endHours, endMinutes] = endTime.split(':');
 
-  if (!hours || !minutes) {
+  if (!startHours || !startMinutes) {
+    return {
+      errors: ['Invalid time range format'],
+      isValid: false
+    }
+  }
+
+  if (!endHours || !endMinutes) {
     return {
       errors: ['Invalid time range format'],
       isValid: false
