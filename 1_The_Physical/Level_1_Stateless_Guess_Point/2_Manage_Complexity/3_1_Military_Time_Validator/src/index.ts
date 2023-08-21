@@ -5,6 +5,13 @@ export type Result = {
   isValid: boolean;
 }
 
+const validateHours = (hour: number) => {
+  if (hour < 0 || hour > 23) {
+    return false;
+  }
+  return true;
+}
+
 export const validateMilitaryTime = (time: string): Result => {
   const [startTime, endTime] = time.split('-');
 
@@ -26,6 +33,13 @@ export const validateMilitaryTime = (time: string): Result => {
   }
 
   if (!endHours || !endMinutes) {
+    return {
+      errors: ['Invalid time range format'],
+      isValid: false
+    }
+  }
+
+  if (!validateHours(Number(startHours))) {
     return {
       errors: ['Invalid time range format'],
       isValid: false
