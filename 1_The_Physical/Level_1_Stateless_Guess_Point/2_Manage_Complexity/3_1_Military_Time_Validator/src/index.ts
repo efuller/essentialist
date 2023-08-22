@@ -36,16 +36,11 @@ export const validateMilitaryTime = (time: string): Result => {
   const [startHours, startMinutes] = startTime.split(':');
   const [endHours, endMinutes] = endTime.split(':');
 
-  if (!startHours || !startMinutes) {
+  const validHoursAndMinutesFormat = startHours && startMinutes && endHours && endMinutes;
+
+  if (!validHoursAndMinutesFormat) {
     return {
       errors: ['Invalid start hours or minutes'],
-      isValid: false
-    }
-  }
-
-  if (!endHours || !endMinutes) {
-    return {
-      errors: ['Invalid end hours or minutes'],
       isValid: false
     }
   }
