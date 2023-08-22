@@ -11,15 +11,20 @@ Write a function (or a stateless class) capable of validating whether a string t
 - it knows that 24:00 is also the same as 00:00 (both are valid and this is a nice to have)
 
 ## Examples
-- [ ] "01:12-14:32" (yes)
-- [ ] "25:00 - 12:23" (no)
-- [ ] "22:00 - 23:12" (yes)
-- [ ] "01:12 - 26:13" (no)
-- [ ] "01:45 - 23:59" (yes)
-- [ ] "26:45 - 27:32" (no)
-- [ ] "26:45 - 27:32" (no)
-- [ ] "-11:34 - 12:23" (no)
-- [ ] "24:00 - 01:45" (yes)
+- [x] "01:12-14:32" (yes)
+- [x] "01:12 - 14:32" (yes)
+- [x] "01:12--14:32" (yes)
+- [x] "01-12-14:32" (no)
+- [x] "01:12-14-32" (no)
+- [x] "25:00-12:23" (no)
+- [x] "14:60-12:23" (no)
+- [x] "14:59-25:23" (no)
+- [x] "14:59-20:60" (no)
+- [x] "22:00 - 23:12" (yes)
+- [x] "01:12 - 26:13" (no)
+- [x] "01:45 - 23:59" (yes)
+- [x] "26:45 - 27:32" (no)
+- [x] "-11:34 - 12:23" (no)
 
 ## Initial API Design
 - Like some others, I am going to avoid using Regex
