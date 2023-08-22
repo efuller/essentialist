@@ -1,4 +1,8 @@
-type ErrorTypes = "Invalid time range format";
+type ErrorTypes = "Invalid time range format"
+  | "Invalid start hours or minutes"
+  | "Invalid end hours or minutes"
+  | "Hours should be between 0 and 23"
+  | "Minutes should be between 0 and 59";
 
 export type Result = {
   errors: ErrorTypes[],
@@ -34,42 +38,42 @@ export const validateMilitaryTime = (time: string): Result => {
 
   if (!startHours || !startMinutes) {
     return {
-      errors: ['Invalid time range format'],
+      errors: ['Invalid start hours or minutes'],
       isValid: false
     }
   }
 
   if (!endHours || !endMinutes) {
     return {
-      errors: ['Invalid time range format'],
+      errors: ['Invalid end hours or minutes'],
       isValid: false
     }
   }
 
   if (!validateHours(Number(startHours))) {
     return {
-      errors: ['Invalid time range format'],
+      errors: ['Hours should be between 0 and 23'],
       isValid: false
     }
   }
 
   if (!validateMinutes(Number(startMinutes))) {
     return {
-      errors: ['Invalid time range format'],
+      errors: ['Minutes should be between 0 and 59'],
       isValid: false
     }
   }
 
   if (!validateHours(Number(endHours))) {
     return {
-      errors: ['Invalid time range format'],
+      errors: ['Hours should be between 0 and 23'],
       isValid: false
     }
   }
 
   if (!validateMinutes(Number(endMinutes))) {
     return {
-      errors: ['Invalid time range format'],
+      errors: ['Minutes should be between 0 and 59'],
       isValid: false
     }
   }
