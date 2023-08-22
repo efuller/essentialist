@@ -45,14 +45,17 @@ export const validateMilitaryTime = (time: string): Result => {
     }
   }
 
-  if (!validateHours(Number(startHours)) || !validateHours(Number(endHours))) {
+  const validHours = validateHours(Number(startHours)) && validateHours(Number(endHours));
+  const validMinutes = validateMinutes(Number(startMinutes)) && validateMinutes(Number(endMinutes));
+
+  if (!validHours) {
     return {
       errors: ['Hours should be between 0 and 23'],
       isValid: false
     }
   }
 
-  if (!validateMinutes(Number(startMinutes)) || !validateMinutes(Number(endMinutes))) {
+  if (!validMinutes) {
     return {
       errors: ['Minutes should be between 0 and 59'],
       isValid: false
