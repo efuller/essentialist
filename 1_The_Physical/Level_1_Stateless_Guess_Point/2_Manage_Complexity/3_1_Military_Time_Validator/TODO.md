@@ -13,13 +13,17 @@ Write a function (or a stateless class) capable of validating whether a string t
 ## Examples
 - [x] "01:12-14:32" (yes)
 - [x] "01:12 - 14:32" (yes)
-- [x] "01:12--14:32" (yes)
+- [x] "01:12--14:32" (no)
 - [x] "01-12-14:32" (no)
 - [x] "01:12-14-32" (no)
 - [x] "25:00-12:23" (no)
 - [x] "14:60-12:23" (no)
 - [x] "14:59-25:23" (no)
 - [x] "14:59-20:60" (no)
+- [x] "asdf:59-20:34" (no)
+- [x] "14:asdf-20:34" (no)
+- [x] "14:59-asdf:34" (no)
+- [x] "14:59-20:asdf" (no)
 - [x] "22:00 - 23:12" (yes)
 - [x] "01:12 - 26:13" (no)
 - [x] "01:45 - 23:59" (yes)
@@ -45,3 +49,7 @@ result = {
 expect(result.errors.length).toBe(0);
 expect(result.isValid).toBe(true);
 ```
+## Final Thoughts
+It took me three takes to actually get here. There was certainly an uptick in complexity, but
+a lot of that was due to me over thinking and over complicating things particularly around my return object. I will
+also say that I didn't formally follow the TPP, but I did attempt to make ths smallest changes possible.
