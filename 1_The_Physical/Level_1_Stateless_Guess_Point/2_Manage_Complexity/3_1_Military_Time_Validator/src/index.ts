@@ -6,14 +6,14 @@ export type Result = {
 }
 
 const validateHours = (hour: number) => {
-  if (hour < 0 || hour > 23) {
+  if (hour < 0 || hour > 23 || Number.isNaN(hour)) {
     return false;
   }
   return true;
 }
 
 const validateMinutes = (minutes: number) => {
-  if (minutes < 0 || minutes > 59) {
+  if (minutes < 0 || minutes > 59 || Number.isNaN(minutes)) {
     return false;
   }
   return true;

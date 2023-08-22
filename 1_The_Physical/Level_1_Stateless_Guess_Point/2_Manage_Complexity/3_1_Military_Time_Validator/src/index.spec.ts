@@ -29,6 +29,10 @@ describe('military time validator', () => {
       { given: "14:60-12:23", expected: false },
       { given: "14:59-25:23", expected: false },
       { given: "14:59-20:60", expected: false },
+      { given: "asdf:59-20:34", expected: false },
+      { given: "14:asdf-20:34", expected: false },
+      { given: "14:59-asdf:34", expected: false },
+      { given: "14:59-20:asdf", expected: false },
     ])('it knows that $given is not a valid input', (param) => {
       const result = validateMilitaryTime(param.given);
       expect(result.isValid).toBe(param.expected);
