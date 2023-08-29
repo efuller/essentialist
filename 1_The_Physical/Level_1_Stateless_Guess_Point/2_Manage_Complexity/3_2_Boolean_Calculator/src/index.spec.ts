@@ -18,4 +18,10 @@ describe('boolean calculator', () => {
 
     expect(result).toBe(false);
   });
+
+  it('given "NOT FALSE" should return false', () => {
+    const result = booleanCalculator("NOT FALSE");
+
+    expect(result).toBe(true);
+  });
 });
