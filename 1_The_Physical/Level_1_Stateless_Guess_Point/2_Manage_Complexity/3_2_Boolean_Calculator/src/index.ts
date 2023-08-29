@@ -15,5 +15,17 @@ export const booleanCalculator = (text: string) => {
     })
     return result;
   }
+
+
+  if (text.includes(' OR ')) {
+    let result = false;
+    const value = text.split(' OR ');
+    value.forEach((v) => {
+      if (v === 'TRUE') {
+        result = true;
+      }
+    })
+    return result;
+  }
   return false;
 }
