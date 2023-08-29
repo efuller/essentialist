@@ -1,3 +1,6 @@
 export const booleanCalculator = (text: string) => {
-  return true;
+  if (text === "TRUE") {
+    return true;
+  }
+  return false;
 }
